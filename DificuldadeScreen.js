@@ -9,7 +9,7 @@ export default function DificuldadeScreen({ navigation, route }) {
       <View style={styles.card}>
         <Text style={styles.title}>Escolha a Dificuldade</Text>
 
-        {/* Todos os botões dentro do mesmo View */}
+        
         <View style={{ width: "100%", alignItems: "center" }}>
           <TouchableOpacity
             style={styles.button}
