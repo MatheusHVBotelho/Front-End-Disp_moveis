@@ -1,9 +1,9 @@
 import React from "react";
 import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { useTheme } from "./ThemeContext"; // 👈 Importa o tema
+import { useTheme } from "./ThemeContext"; 
 
 export default function InicioScreen({ navigation }) {
-  const { tema } = useTheme(); // 👈 Usa o tema
+  const { tema } = useTheme(); 
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: tema.background }]}>
