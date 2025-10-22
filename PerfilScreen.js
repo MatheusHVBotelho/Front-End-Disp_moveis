@@ -1,9 +1,9 @@
 import React from "react";
 import { SafeAreaView, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { useTheme } from "./ThemeContext"; // 👈 Importa o contexto de tema
+import { useTheme } from "./ThemeContext";
 
 export default function PerfilScreen({ navigation }) {
-  const { tema } = useTheme(); // 👈 Usa o tema atual (claro/escuro)
+  const { tema } = useTheme(); 
 
   return (
     <SafeAreaView
