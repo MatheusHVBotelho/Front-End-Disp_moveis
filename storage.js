@@ -1,10 +1,8 @@
-// storage.js
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const STATS_KEY = "@app_stats_v1";
 const SETTINGS_KEY = "@app_settings_v1";
 
-// Stats
 export async function loadStats() {
   try {
     const raw = await AsyncStorage.getItem(STATS_KEY);
@@ -23,7 +21,6 @@ export async function saveStats(stats) {
   }
 }
 
-// Settings
 export async function loadSettings() {
   try {
     const raw = await AsyncStorage.getItem(SETTINGS_KEY);
