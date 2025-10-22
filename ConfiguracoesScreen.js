@@ -10,7 +10,7 @@ export default function ConfiguracoesScreen({ navigation }) {
       <View style={[styles.card, { backgroundColor: tema.card }]}>
         <Text style={[styles.title, { color: tema.text }]}>Configurações</Text>
 
-        {/* 🔊 Som (exemplo fixo, sem persistência) */}
+        
         <TouchableOpacity
           style={[styles.button, { backgroundColor: tema.button }]}
           onPress={() => console.log("Alternar som aqui")}
@@ -20,7 +20,7 @@ export default function ConfiguracoesScreen({ navigation }) {
           </Text>
         </TouchableOpacity>
 
-        {/* 🌙 Alternar modo escuro/claro */}
+        
         <TouchableOpacity
           style={[styles.button, { backgroundColor: tema.button }]}
           onPress={alternarModo}
@@ -30,7 +30,7 @@ export default function ConfiguracoesScreen({ navigation }) {
           </Text>
         </TouchableOpacity>
 
-        {/* 🔙 Botão Voltar */}
+        
         <TouchableOpacity
           style={[styles.voltarButton, { backgroundColor: tema.button }]}
           onPress={() => navigation.goBack()}
