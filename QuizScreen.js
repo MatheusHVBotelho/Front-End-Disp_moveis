@@ -13,12 +13,12 @@ export default function QuizScreen({ route, navigation }) {
       try {
         const response = await api.get("/api/questao/materia", {
           params: {
-            materias: [materia], // array conforme a API
-            dificuldade: dificuldade, // número: 1, 2 ou 3
+            materias: [materia], 
+            dificuldade: dificuldade, 
           },
         });
 
-        // Formata as questões para o QuizScreen
+        
         const dadosFormatados = response.data.map((q) => ({
           enunciado: q.enunciado || q.pergunta || "Sem enunciado",
           alternativas: [
@@ -28,7 +28,7 @@ export default function QuizScreen({ route, navigation }) {
             { texto: q.alternativa_d },
             { texto: q.alternativa_e },
           ].filter(Boolean),
-          correta: q.alternativa_correta, // se quiser usar para validação
+          correta: q.alternativa_correta, 
           explicacao: q.explicacao || "Sem explicação",
         }));
 
