@@ -1,10 +1,10 @@
 import React from "react";
 import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { SUBJECTS } from "./questions";
-import { useTheme } from "./ThemeContext"; // 👈 Importa o contexto
+import { useTheme } from "./ThemeContext"; 
 
 export default function DisciplinaScreen({ navigation }) {
-  const { tema } = useTheme(); // 👈 Usa o tema global
+  const { tema } = useTheme(); 
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: tema.background }]}>
@@ -21,7 +21,7 @@ export default function DisciplinaScreen({ navigation }) {
           </TouchableOpacity>
         ))}
 
-        {/* Botão Voltar */}
+        
         <TouchableOpacity
           style={[styles.secondaryButton, { backgroundColor: tema.button }]}
           onPress={() => navigation.goBack()}
