@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
 
-// 🌞 Tema claro
 const lightTheme = {
   background: "#f2f2f4",
   card: "#fff",
@@ -9,7 +8,6 @@ const lightTheme = {
   buttonText: "#fff",
 };
 
-// 🌙 Tema escuro
 const darkTheme = {
   background: "#1f2d3d",
   card: "#2d3a4d",
@@ -18,15 +16,12 @@ const darkTheme = {
   buttonText: "#1f2d3d",
 };
 
-// Criando contexto
 const ThemeContext = createContext();
 
-// Hook para usar tema
 export function useTheme() {
   return useContext(ThemeContext);
 }
 
-// Provider para envolver o app
 export function ThemeProvider({ children }) {
   const [modoEscuro, setModoEscuro] = useState(false);
 
