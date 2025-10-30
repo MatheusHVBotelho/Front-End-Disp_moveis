@@ -1,48 +1,68 @@
 import React from "react";
 import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { useTheme } from "./ThemeContext"; // 👈 Importa o contexto de tema
 
 export default function DificuldadeScreen({ navigation, route }) {
   const { materia } = route.params;
+  const { tema, modoEscuro } = useTheme(); // 👈 Pega o tema e modo escuro do contexto
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.card}>
-        <Text style={styles.title}>Escolha a Dificuldade</Text>
+    <SafeAreaView style={[styles.container, { backgroundColor: tema.background }]}>
+      <View style={[styles.card, { backgroundColor: tema.card }]}>
+        <Text style={[styles.title, { color: tema.text }]}>
+          Escolha a Dificuldade
+        </Text>
 
-        
         <View style={{ width: "100%", alignItems: "center" }}>
           <TouchableOpacity
-            style={styles.button}
+            style={[styles.button, { backgroundColor: tema.button }]}
             onPress={() =>
               navigation.navigate("Quiz", { materia: materia, dificuldade: 1 })
             }
           >
-            <Text style={styles.buttonText}>Fácil</Text>
+            <Text style={[styles.buttonText, { color: tema.buttonText }]}>
+              Fácil
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.button}
+            style={[styles.button, { backgroundColor: tema.button }]}
             onPress={() =>
               navigation.navigate("Quiz", { materia: materia, dificuldade: 2 })
             }
           >
-            <Text style={styles.buttonText}>Médio</Text>
+            <Text style={[styles.buttonText, { color: tema.buttonText }]}>
+              Médio
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.button}
+            style={[styles.button, { backgroundColor: tema.button }]}
             onPress={() =>
               navigation.navigate("Quiz", { materia: materia, dificuldade: 3 })
             }
           >
-            <Text style={styles.buttonText}>Difícil</Text>
+            <Text style={[styles.buttonText, { color: tema.buttonText }]}>
+              Difícil
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.button, styles.backButton]}
+            style={[
+              styles.button,
+              styles.backButton,
+              { backgroundColor: modoEscuro ? "#333" : "#e5e7eb" },
+            ]}
             onPress={() => navigation.goBack()}
           >
-            <Text style={[styles.buttonText, { color: "#1f2d3d" }]}>Voltar</Text>
+            <Text
+              style={[
+                styles.buttonText,
+                { color: modoEscuro ? "#fff" : "#1f2d3d" },
+              ]}
+            >
+              Voltar
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -53,14 +73,12 @@ export default function DificuldadeScreen({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f2f2f4",
     justifyContent: "center",
     alignItems: "center",
   },
   card: {
     width: "90%",
     padding: 20,
-    backgroundColor: "#fff",
     borderRadius: 18,
     alignItems: "center",
   },
@@ -73,16 +91,13 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 14,
     borderRadius: 30,
-    backgroundColor: "#1f2d3d",
     alignItems: "center",
     marginVertical: 6,
   },
   buttonText: {
-    color: "#fff",
     fontWeight: "700",
   },
   backButton: {
-    backgroundColor: "#e5e7eb",
     marginTop: 20,
   },
 });
